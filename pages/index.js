@@ -87,6 +87,7 @@ export default function Home() {
                   href="Chris_ehigimetor_cv.pdf"
                   download
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Resume
                 </a>
@@ -101,12 +102,12 @@ export default function Home() {
               Javascript Developer.
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              I'm a Javascript Developer that specializes on front-end frameworks such as React, Vue, NuxtJS and NextJS. I have a passion for Design Systems, Web Accessibility, Open Source Contribution, and System Integration. To grow I focus on contributing to open source projects.
+               A javascript Developer that specializes on front-end frameworks such as React, Vue, NuxtJS and NextJS. I have a passion for Design Systems, Web Accessibility, Open Source Contribution, and System Integration. To grow I focus on contributing to open source projects.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <a href="https://twitter.com/bishopsirhchris" target="_blank"><AiFillTwitterCircle /></a>
-              <a href="https://www.linkedin.com/in/ambassador-chris-ehigimetor" target="_blank"><AiFillLinkedin /></a>
-              <a href="https://github.com/kathalysth" target="_blank"><AiFillGithub /></a>
+              <a href="https://twitter.com/bishopsirhchris" target="_blank" rel="noreferrer"><AiFillTwitterCircle /></a>
+              <a href="https://www.linkedin.com/in/ambassador-chris-ehigimetor" target="_blank" rel="noreferrer"><AiFillLinkedin /></a>
+              <a href="https://github.com/kathalysth" target="_blank" rel="noreferrer"><AiFillGithub /></a>
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
               <Image src={portrait} layout="fill" objectFit="cover" />
