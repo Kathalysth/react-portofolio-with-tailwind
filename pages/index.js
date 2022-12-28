@@ -101,10 +101,9 @@ export default function Home() {
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
               A javascript Developer that specializes on front-end frameworks
-              such as React, Vue, NuxtJS and NextJS. I have a passion for Design
-              Systems, Web Accessibility, Open Source Contribution, and System
-              Integration. To grow I focus on contributing to open source
-              projects.
+              such as React and Vue. I have a passion for Design Systems, Web
+              Accessibility, Open Source Contribution, and System Integration.
+              To grow I focus on contributing to open source projects.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <a
