@@ -92,21 +92,29 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          <div className="text-center p-10 py-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+          <div className="text-center py-10">
+            <h2 className="text-5xl py-2 text-teal-600 font-bold dark:text-teal-400 md:text-6xl">
               Chris Ehigimetor
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Software Engineer.
             </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              A javascript Developer that specializes on front-end frameworks
-              such as React and Vue. I have a passion for Design Systems, Web
-              Accessibility, Open Source Contribution, and System Integration.
-              To grow I focus on contributing to open source projects.
+            <p className="text-md text-justify py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+              I am a Software Engineer with experience in React, NodeJs, and
+              Vue. I am also experienced in Java and C#. I am passionate about
+              problem-solving, and I am very analytical and results-oriented. I
+              am also relentless when it comes to achieving results. I grew up
+              in Nigeria, and I have always been fascinated by technology and
+              how it can be used to solve problems. I decided to become a
+              software engineer because I wanted to be able to build solutions
+              that make people's lives better. I am currently working on a
+              project that is aimed at making the web more accessible for people
+              with disabilities. I also work on contributing to open-source
+              projects frequently.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <a
+                className="hover:bg-teal-500 rounded-full"
                 href="https://twitter.com/bishopsirhchris"
                 target="_blank"
                 rel="noreferrer"
@@ -114,6 +122,7 @@ export default function Home() {
                 <AiFillTwitterCircle />
               </a>
               <a
+                className="hover:bg-teal-500 rounded"
                 href="https://www.linkedin.com/in/ambassador-chris-ehigimetor"
                 target="_blank"
                 rel="noreferrer"
@@ -121,6 +130,7 @@ export default function Home() {
                 <AiFillLinkedin />
               </a>
               <a
+                className="hover:bg-teal-500 rounded-full"
                 href="https://github.com/kathalysth"
                 target="_blank"
                 rel="noreferrer"
@@ -128,14 +138,14 @@ export default function Home() {
                 <AiFillGithub />
               </a>
             </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
+            <div className="mx-auto flex justify-center bg-gradient-to-b from-teal-500 rounded-full w-full h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
               <Image src={portrait} layout="fill" objectFit="cover" />
             </div>
           </div>
         </section>
         <section>
           <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Skills</h3>
+            <h3 className="text-3xl py-1 dark:text-white font-bold ">Skills</h3>
           </div>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-gray-700 flex-1">
@@ -157,7 +167,7 @@ export default function Home() {
               </h3>
               <p className="text-gray-900 dark:text-gray-200 py-1">React</p>
               <p className="text-gray-900 dark:text-gray-200 py-1">
-                SpringBoot
+                Spring Boot
               </p>
               <p className="text-gray-900 dark:text-gray-200 py-1">.Net</p>
               <p className="text-gray-900 dark:text-gray-200 py-1">Vue</p>
@@ -176,9 +186,11 @@ export default function Home() {
         </section>
         <section className="py-10">
           <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Projects</h3>
+            <h3 className="text-3xl py-1 dark:text-white font-bold ">
+              Projects
+            </h3>
           </div>
-          <div className="flex flex-col gap-5 py-10 lg:flex-row lg:flex-wrap">
+          <div className="flex gap-5 justify-center py-10 flex-wrap">
             {projects.map((project, index) => (
               <Projects key={`${project.title}-${index}`} project={project} />
             ))}
@@ -186,7 +198,9 @@ export default function Home() {
         </section>
         <section className="py-10">
           <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Lets Talk</h3>
+            <h3 className="text-3xl font-bold py-1 dark:text-white ">
+              Lets Talk
+            </h3>
             <p className="text-teal-500 py-4">Drop a message!</p>
             <form
               onSubmit={(e) => {

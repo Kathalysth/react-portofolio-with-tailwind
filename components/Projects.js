@@ -1,10 +1,9 @@
-import Head from "next/head";
 import Image from "next/image";
 const Projects = ({ project }) => {
   return (
-    <div className="flex-1 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
+    <div className="w-full md:w-5/12 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover">
       <Image
-        className="rounded-lg object-cover max-w-xs"
+        className="rounded-lg object-cover top-0 right-0 max-w-xs"
         width={"100%"}
         height={"100%"}
         alt={`Photo of ${project.title}`}
