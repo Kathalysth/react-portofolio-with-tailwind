@@ -18,7 +18,6 @@ import Projects from "../components/Projects";
 import { projects } from "../projects";
 import { motion, useScroll, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Link from "next/link";
 
 const MySwal = withReactContent(Swal);
 
