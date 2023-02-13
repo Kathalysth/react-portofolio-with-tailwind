@@ -16,25 +16,12 @@ import portrait from "../public/my-portrait.jpg";
 import programming from "../public/Javascript_Monochromatic.svg";
 import Projects from "../components/Projects";
 import { projects } from "../projects";
-import { motion, useScroll, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion, useScroll } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MySwal = withReactContent(Swal);
 
-const characterAnimation = {
-  hidden: {
-    opacity: 0,
-    y: `0.25em`,
-  },
-  visible: {
-    opacity: 1,
-    y: `0em`,
-    transition: {
-      duration: 1,
-      ease: [0.2, 0.65, 0.3, 0.9],
-    },
-  },
-};
 const me = "Chris Ehigimetor";
 const role = "Software  Engineer";
 export default function Home() {
@@ -45,26 +32,9 @@ export default function Home() {
   const [messageValue, setMessage] = useState("");
   const { scrollYProgress } = useScroll();
 
-  const ctrls = useAnimation();
-
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  });
-
-  const wordAnimation = {
-    hidden: {},
-    visible: {},
-  };
-
   useEffect(() => {
-    if (inView) {
-      ctrls.start("visible");
-    }
-    if (!inView) {
-      ctrls.start("hidden");
-    }
-  }, [ctrls, inView]);
+    AOS.init();
+  }, []);
 
   function handleFormSubmit() {
     setIsLoading(true);
@@ -83,11 +53,11 @@ export default function Home() {
     })
       .then((response) => response.json())
       .then((data) => {
-        MySwal.fire(
-          "Thank You!",
-          `I appreciate you ${nameValue} for taking the time to reach out!`,
-          "success"
-        );
+        MySwal.fire({
+          title: `Thank You, <strong style="text-transform: capitalize;">${nameValue}</strong>!`,
+          html: `I appreciate you taking the time to reach out!`,
+          icon: "success",
+        });
         setEmail("");
         setMessage("");
         setName("");
@@ -116,7 +86,7 @@ export default function Home() {
         </Head>
         <main className=" bg-white px-6 dark:bg-gray-900 md:px-10 lg:px-30">
           <section className="min-h-screen">
-            <nav className="py-10 mb-12 flex justify-between dark:text-white">
+            <nav className="py-10 mb-12 flex flex-wrap justify-between dark:text-white">
               <h1 className="font-burtons text-xl">{me}</h1>
               <ul className="flex items-center">
                 <li className="p-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">
@@ -149,58 +119,19 @@ export default function Home() {
                     height={400}
                   />
                 </div>
-                <h2 className="text-3xl py-2 text-teal-600 font-bold dark:text-teal-400 md:text-4xl">
-                  {me.split("").map((c, i) => (
-                    <motion.span
-                      ref={ref}
-                      initial="hidden"
-                      aria-hidden="true"
-                      key={i}
-                      animate={ctrls}
-                      variants={characterAnimation}
-                    >
-                      {c}
-                    </motion.span>
-                  ))}
+                <h2
+                  data-aos="fade-up-left"
+                  data-aos-once="true"
+                  className="text-3xl py-2 text-teal-600 font-bold dark:text-teal-400 md:text-4xl"
+                >
+                  {me}
                 </h2>
-                <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-                  {role.split(" ").map((word, index) => {
-                    return (
-                      <motion.span
-                        style={{
-                          display: "inline-block",
-                          marginRight: " 0.25em",
-                          whiteSpace: " nowrap",
-                        }}
-                        ref={ref}
-                        aria-hidden="true"
-                        key={index}
-                        initial="hidden"
-                        animate={ctrls}
-                        variants={wordAnimation}
-                        transition={{
-                          delayChildren: index * 0.25,
-                          staggerChildren: 0.05,
-                        }}
-                      >
-                        {word.split("").map((character, index) => {
-                          return (
-                            <motion.span
-                              style={{
-                                display: "inline-block",
-                                marginRight: "-0.05em",
-                              }}
-                              aria-hidden="true"
-                              key={index}
-                              variants={characterAnimation}
-                            >
-                              {character}
-                            </motion.span>
-                          );
-                        })}
-                      </motion.span>
-                    );
-                  })}
+                <h3
+                  data-aos="fade-up-right"
+                  data-aos-once="true"
+                  className="text-2xl py-2 dark:text-white md:text-3xl"
+                >
+                  {role}
                 </h3>
                 <div className="text-5xl flex justify-center gap-16 py-3 text-gray-300">
                   <a
@@ -230,7 +161,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2">
-                <p className="text-md text-justify py-5 leading-8 text-gray-800 w-full dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+                <p
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                  className="text-md mb-4 text-justify py-5 leading-8 text-gray-800 w-full dark:text-gray-200 max-w-xl mx-auto md:text-xl"
+                >
                   {` A highly motivated and dedicated software developer with experience in Node.js, React.js, JavaScript, Java, and C#. Possesses strong problem-solving skills and a passion for coding. A quick learner with a strong drive to constantly improve and expand upon existing skills and knowledge. Demonstrates expertise in developing and maintaining high-quality applications, ensuring they meet project requirements and customer expectations. A team player with excellent communication skills, capable of working collaboratively with cross-functional teams to deliver successful projects on time and within budget. Overall, an exceptional software developer who is dedicated to delivering top-notch solutions and continuously improving my craft.`}
                 </p>
                 <a
@@ -323,10 +258,16 @@ export default function Home() {
               </h3>
               <p className="text-teal-500 py-4">Drop a message!</p>
               <div className="w-full flex  flex-wrap md:justify-between items-center">
-                <div className="w-full md:w-2/5 h-80 flex justify-center">
+                <div
+                  data-aos="fade-up-right"
+                  data-aos-once="true"
+                  className="w-full md:w-2/5 h-80 flex justify-center"
+                >
                   <Image src={chatSvg} className="w-full" alt="chat" />
                 </div>
                 <form
+                  data-aos="fade-up-left"
+                  data-aos-once="true"
                   id="letsTalk"
                   onSubmit={(e) => {
                     e.preventDefault();

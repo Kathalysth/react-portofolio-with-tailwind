@@ -22,7 +22,9 @@ a {
   font-family: "burtons";
   src: url("../public/Burtons.otf");
 }
-
+main {
+  overflow: hidden;
+}
 .progress-bar {
   position: fixed;
   top: 0;

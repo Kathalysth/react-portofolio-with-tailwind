@@ -1,10 +1,19 @@
 import Image from "next/image";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Projects = ({ project, number }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="w-full flex flex-wrap  gap-2 p-4  items-center cursor-pointer  relative overflow-hidden bg-no-repeat bg-cover">
       {number % 2 !== 0 ? (
-        <div className="w-full md:w-4/12 order-2 md:order-1 dark:text-white">
+        <div
+          data-aos="fade-right"
+          data-aos-once="true"
+          className="w-full md:w-4/12 order-2 md:order-1 dark:text-white"
+        >
           <h3 className="font-bold text-4xl">{project.title}</h3>
           <p className="pb-4 text-teal-600">{project.stack.join(" ")}</p>
           <p>{project.description}</p>
@@ -12,6 +21,8 @@ const Projects = ({ project, number }) => {
       ) : null}
       <div className="w-full  h-80 order-1 md:order-1 md:w-7/12 relative">
         <Image
+          data-aos="fade-left"
+          data-aos-once="true"
           className="w-full"
           layout="fill"
           objectFit="contain"

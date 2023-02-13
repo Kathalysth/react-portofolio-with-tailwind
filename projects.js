@@ -4,7 +4,7 @@ import biria from "./public/biria_school_landing.PNG";
 
 export const projects = [
   {
-    title: "APPLYFORME",
+    title: "Apply For Me",
     background: afm,
     stack: ["React", "Java", "MySQL"],
     description: `A web application that automates the process of Job applications,
