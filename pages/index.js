@@ -237,7 +237,7 @@ export default function Home() {
                   href="#letsTalk"
                   className="bg-teal-500 p-4 text-3xl text-white hover:opacity-90"
                 >
-                  Let's Talk
+                  Lets Talk
                 </a>
               </div>
             </div>
