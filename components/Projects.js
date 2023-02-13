@@ -1,35 +1,6 @@
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-
-const boxVariant = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  hidden: { opacity: 0, scale: 0 },
-};
-
 const Projects = ({ project, number }) => {
-  const control = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    } else {
-      control.start("hidden");
-    }
-  }, [control, inView]);
-
   return (
-    <motion.div
-      ref={ref}
-      variants={boxVariant}
-      initial="hidden"
-      animate={control}
-      className="w-full flex flex-wrap  gap-2 items-center cursor-pointer  relative overflow-hidden bg-no-repeat bg-cover min-h-[70vh] md:min-h-screen"
-    >
+    <div className="w-full flex flex-wrap  gap-2 p-4 h-fit items-center cursor-pointer  relative overflow-hidden bg-no-repeat bg-cover">
       {number % 2 !== 0 ? (
         <div className="w-full md:w-4/12 order-2 md:order-1 dark:text-white">
           <h3 className="font-bold text-4xl">{project.title}</h3>
@@ -57,7 +28,7 @@ const Projects = ({ project, number }) => {
         <p className="pb-4">{project.stack.join(" ")}</p>
         <p>{project.description}</p>
       </div> */}
-    </motion.div>
+    </div>
   );
 };
 
