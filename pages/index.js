@@ -250,7 +250,12 @@ export default function Home() {
             </div>
             <div className="lg:flex gap-10">
               <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-gray-700 flex-1">
-                <Image src={programming} width={200} height={200} />
+                <Image
+                  src={programming}
+                  width={200}
+                  height={200}
+                  alt="languages figure"
+                />
                 <h3 className="text-lg font-medium pt-8 pb-2 text-teal-600 ">
                   Languages
                 </h3>
@@ -262,7 +267,12 @@ export default function Home() {
                 <p className="text-gray-900 dark:text-gray-200 py-1">Python</p>
               </div>
               <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-700 flex-1">
-                <Image src={frameworks} width={200} height={200} />
+                <Image
+                  src={frameworks}
+                  width={200}
+                  height={200}
+                  alt="technologies figure"
+                />
                 <h3 className="text-lg font-medium pt-8 pb-2 text-teal-600 ">
                   Technologies and Frameworks
                 </h3>
@@ -274,7 +284,12 @@ export default function Home() {
                 <p className="text-gray-900 dark:text-gray-200 py-1">Vue</p>
               </div>
               <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-700 flex-1">
-                <Image src={versionControl} width={200} height={200} />
+                <Image
+                  src={versionControl}
+                  width={200}
+                  height={200}
+                  alt="verson control figure"
+                />
                 <h3 className="text-lg font-medium pt-8 pb-2 text-teal-600">
                   CI/CD
                 </h3>
