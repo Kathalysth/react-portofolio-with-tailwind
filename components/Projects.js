@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 const Projects = ({ project, number }) => {
   return (
-    <div className="w-full flex flex-wrap  gap-2 p-4 h-fit items-center cursor-pointer  relative overflow-hidden bg-no-repeat bg-cover">
+    <div className="w-full flex flex-wrap  gap-2 p-4  items-center cursor-pointer  relative overflow-hidden bg-no-repeat bg-cover">
       {number % 2 !== 0 ? (
         <div className="w-full md:w-4/12 order-2 md:order-1 dark:text-white">
           <h3 className="font-bold text-4xl">{project.title}</h3>
@@ -8,14 +10,15 @@ const Projects = ({ project, number }) => {
           <p>{project.description}</p>
         </div>
       ) : null}
-      <img
-        className="w-full order-1 md:order-1 md:w-7/12"
-        width={"100%"}
-        height={"100%"}
-        alt={`Photo of ${project.title}`}
-        layout="responsive"
-        src={project.background.src}
-      />
+      <div className="w-full  h-80 order-1 md:order-1 md:w-7/12 relative">
+        <Image
+          className="w-full"
+          layout="fill"
+          objectFit="contain"
+          alt={`Photo of ${project.title}`}
+          src={project.background.src}
+        />
+      </div>
       {number % 2 === 0 ? (
         <div className="w-full md:w-4/12 order-2 md:order-1 dark:text-white">
           <h3 className="font-bold text-4xl">{project.title}</h3>
