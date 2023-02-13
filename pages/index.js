@@ -309,7 +309,7 @@ export default function Home() {
               <p className="text-teal-500 py-4">Drop a message!</p>
               <div className="w-full flex  flex-wrap md:justify-between items-center">
                 <div className="w-full md:w-2/5 h-80 flex justify-center">
-                  <Image src={chatSvg} className="w-full" />
+                  <Image src={chatSvg} className="w-full" alt="chat" />
                 </div>
                 <form
                   id="letsTalk"
