@@ -181,7 +181,7 @@ export default function Hero({ dark, setDark }) {
               <div
                 data-aos="fade-left"
                 data-aos-once="true"
-                className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-200/10"
+                className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 dark:text-gray-300 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-200/10"
               >
                 Look me up on Github. See what i have been up to.{" "}
                 <a
@@ -210,7 +210,7 @@ export default function Hero({ dark, setDark }) {
               <p
                 data-aos="fade-right"
                 data-aos-once="true"
-                className="mt-6 text-lg leading-8 text-gray-600"
+                className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
               >
                 As a skilled developer with a passion for clean code, design
                 systems, and innovative solutions, I am ready to take on your
