@@ -17,6 +17,9 @@ a {
 
 * {
   box-sizing: border-box;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 }
 @font-face {
   font-family: "burtons";
